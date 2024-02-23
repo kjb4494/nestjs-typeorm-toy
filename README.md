@@ -53,15 +53,15 @@ TypeORM과 실무를 익히기 위한 NestJs 공부용 토이 프로젝트
   ```text
   # app
   NODE_ENV=development
-  PORT=5000
-  ADMIN_USER=...
-  ADMIN_PASSWORD=...
-  SECRET_KEY=...
-  DB_USERNAME=...
-  DB_PASSWORD=...
+  PORT=8080
+  ADMIN_USER=admin
+  ADMIN_PASSWORD=1q2w3e4r5t
+  SECRET_KEY=secretkey1234
+  DB_USERNAME=testuser
+  DB_PASSWORD=P@ssw0rd
   DB_HOST=localhost
   DB_PORT=5433
-  DB_NAME=...
+  DB_NAME=testdb
 
   # db
   POSTGRES_DB=testdb
@@ -73,6 +73,10 @@ TypeORM과 실무를 익히기 위한 NestJs 공부용 토이 프로젝트
   ```shell
   docker-compose up -d
   ```
+
+## Project ERD
+
+![ERD](./project-erd-img.png)
 
 ## Installation
 
@@ -105,3 +109,12 @@ $ yarn run test:e2e
 # test coverage
 $ yarn run test:cov
 ```
+
+## Ref
+
+- [_teaching-typeorm-in-the-nest code_](https://github.com/amamov/teaching-typeorm-in-the-nest)
+- [_jest for test_](https://archive.jestjs.io/docs/en/22.x/getting-started)
+- [_TypeORM: Active Record vs Data Mapper Pattern_](https://typeorm.io/active-record-data-mapper#what-is-the-active-record-pattern)
+  - **Active Record Pattern**: 레포지토리 레이어를 두지 않고 엔터티 자체에서 직접 접근하여 로직을 수행합니다. 비교적 작은 서비스에 어울리는 패턴입니다. 모든 엔터티들은 TypeORM에서 제공하는 BaseEntity를 상속하고 이 BaseEntity에는 대부분의 기본 레포지토리에서 제공하는 메서드들이 담겨있습니다.
+  - **Data Mapper Pattern**: 엔터티에 직접 접근하는 방식이 아닌 레포지토리 레이어를 두고 접근합니다.
+- [_TypeORM: Relations_](https://typeorm.io/relations)
